@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 
-/**
- * Created by gpitois on 2/16/18.
- */
 public class PlusOneTest {
     @Test
     public void useCase1() {
