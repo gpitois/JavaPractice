@@ -20,11 +20,11 @@ public class TreeNode {
         if (a.length == 1) return root;
         int nbAtLevel = 1;
         int i = 1;
-        while (i < a.length){
-            for (int j = 0; j < nbAtLevel; j++){
-                TreeNode node = fifo.poll();
-                node.left = (null != a[i])? new TreeNode(a[i++]):null;
-                node.right = (null != a[i])? new TreeNode(a[i++]):null;
+        while (i < a.length) {
+            for (int j = 0; j < nbAtLevel && i < a.length; j++) {
+                TreeNode node = fifo.poll(); // control for non null before doing that.
+                node.left = (null != a[i]) ? new TreeNode(a[i++]) : null;
+                node.right = (null != a[i]) ? new TreeNode(a[i++]) : null;
                 fifo.offer(node.left);
                 fifo.offer(node.right);
             }
