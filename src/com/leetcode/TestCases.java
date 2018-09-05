@@ -49,14 +49,14 @@ public class TestCases {
     @Test
     public void case6() {
         int[] d = {4, 5, 6, 7, 0, 1, 2};
-        assertThat(SearchInRotatedArray.search(d, 0), is(4));
-        assertThat(SearchInRotatedArray.search(d, 3), is(-1));
+//        assertThat(SearchInRotatedArray.search(d, 0), is(4));
+//        assertThat(SearchInRotatedArray.search(d, 3), is(-1));
     }
 
     @Test
     public void case7() {
         int[] d = {1};
-        assertThat(SearchInRotatedArray.search(d, 1), is(0));
+//        assertThat(SearchInRotatedArray.search(d, 1), is(0));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class TestCases {
     public void case10() {
         int[][] mat = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         System.out.println(printMatrix(mat));
-        RotateImage.rotate(mat);
+//        RotateImage.rotate(mat);
         System.out.println(printMatrix(mat));
     }
 
@@ -93,8 +93,43 @@ public class TestCases {
 
     @Test
     public void case11() {
-        assertThat(PowerXn.myPow(2.0, 10), is(1024.0));
-        assertThat(PowerXn.myPow(2.0, -2), is(0.25));
-        assertThat(PowerXn.myPow(2.1, 3), is(9.2610));
+//        assertThat(PowerXn.myPow(2.0, 10), is(1024.0));
+//        assertThat(PowerXn.myPow(2.0, -2), is(0.25));
+//        assertThat(PowerXn.myPow(2.1, 3), is(9.2610));
+    }
+
+    @Test
+    public void testGroupAnagram() {
+        String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println(GroupAnagrams.groupAnagrams(words));
+    }
+
+    @Test
+    public void shouldValidSudoku() {
+        char[][] board = {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+        assertThat(ValidSudoku.isValidSudoku(board), is(true));
+
+        char[][] board2 = {
+                {'8', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+        assertThat(ValidSudoku.isValidSudoku(board2), is(false));
     }
 }
