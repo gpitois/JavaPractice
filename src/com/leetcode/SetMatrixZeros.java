@@ -46,8 +46,8 @@ public class SetMatrixZeros {
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
                 if (matrix[i][j] == 0) {
-                    if (i == 0) firstCol = true;
-                    if (j == 0) firstRow = true;
+                    if (i == 0) firstRow = true;
+                    if (j == 0) firstCol = true;
                     matrix[0][j] = 0;
                     matrix[i][0] = 0;
                 }
@@ -83,6 +83,12 @@ public class SetMatrixZeros {
     @Test
     public void testCase2() {
         int[][] m = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        setZeroes(m);
+    }
+
+    @Test
+    public void testCase3() {
+        int[][] m = {{1, 0, 3}};
         setZeroes(m);
     }
 
